@@ -1,0 +1,6 @@
+@TCS_ClineName_CodeFirstApproach_HostAddress = http://localhost:5216
+
+GET {{TCS_ClineName_CodeFirstApproach_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
