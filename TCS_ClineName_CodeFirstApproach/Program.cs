@@ -24,8 +24,12 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("CompanyOrdersCon
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
+
 builder.Services.AddScoped<IOrdersService, OrdersService>();
 builder.Services.AddScoped<IOrdersRepository, OrdersRepository>();
+
+builder.Services.AddScoped<IDepartmentService, DepartmentService>();
+builder.Services.AddScoped<IDepartmentRepository,DepartmentRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TCS_ClineName_CodeFirstApproach.DbConnect;
 
@@ -10,9 +11,11 @@ using TCS_ClineName_CodeFirstApproach.DbConnect;
 namespace TCS_ClineName_CodeFirstApproach.Migrations
 {
     [DbContext(typeof(EmployeeContext))]
-    partial class EmployeeContextModelSnapshot : ModelSnapshot
+    [Migration("20241112003647_rayudu")]
+    partial class rayudu
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
