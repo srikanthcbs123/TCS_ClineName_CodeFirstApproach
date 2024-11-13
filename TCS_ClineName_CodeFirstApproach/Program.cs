@@ -1,3 +1,4 @@
+using Employee_Dapper.Interface;
 using Microsoft.EntityFrameworkCore;
 using TCS_ClineName_CodeFirstApproach;
 using TCS_ClineName_CodeFirstApproach.DbConnect;
@@ -16,8 +17,15 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<EmployeeContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection")));
 
+builder.Services.AddDbContext<CompanyOrdersContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("CompanyOrdersConnection")));
+
+
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+
+builder.Services.AddScoped<IOrdersService, OrdersService>();
+builder.Services.AddScoped<IOrdersRepository, OrdersRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
